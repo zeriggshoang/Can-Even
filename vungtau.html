@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vung Tau Coastal Breeze</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="place-style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header blend-diff" id="header">
+        <div class="logo">LOGO.</div>
+        <nav class="header-nav">
+            <a href="index.html?skip=1#location-anchor">Location</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="#" id="header-contact-btn">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HAMBURGER -->
+    <button class="hamburger blend-diff">
+        <div class="hamburger-inner">
+            <div class="line top-line"></div>
+            <div class="line middle-line"></div>
+            <div class="line bottom-line"></div>
+            <div class="x-line x-line-1"></div>
+            <div class="x-line x-line-2"></div>
+        </div>
+    </button>
+
+    <!-- FULLSCREEN MENU -->
+    <div class="menu-overlay">
+        <div class="menu-content">
+            <div class="menu-link-container"><a href="index.html?skip=1" class="menu-link" data-text="HOME">HOME</a></div>
+            <hr class="menu-hr">
+            <div class="menu-link-container"><a href="index.html?skip=1#location-anchor" class="menu-link" data-text="LOCATION" id="nav-loc">LOCATION</a></div>
+            <hr class="menu-hr">
+            <div class="menu-link-container"><a href="gallery.html" class="menu-link" data-text="GALLERY">GALLERY</a></div>
+            <hr class="menu-hr">
+            <div class="menu-link-container"><a href="about.html" class="menu-link" data-text="ABOUT">ABOUT</a></div>
+            <hr class="menu-hr">
+            <div class="menu-link-container"><a href="#" class="menu-link" id="menu-contact-btn" data-text="CONTACT">CONTACT</a></div>
+        </div>
+    </div>
+
+    <!-- Contact Popup Board -->
+    <div class="contact-board-overlay" id="contact-board">
+        <div class="contact-board-content">
+            <h2>Get in touch.</h2>
+            <div class="social-links">
+                <a href="mailto:hello@logobrand.com" target="_blank" class="social-btn">
+                    <span class="social-title">Email</span>
+                    <span class="social-id">hello@logobrand.com</span>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="social-btn">
+                    <span class="social-title">Instagram</span>
+                    <span class="social-id">@logobrand</span>
+                </a>
+                <a href="https://facebook.com" target="_blank" class="social-btn">
+                    <span class="social-title">Facebook</span>
+                    <span class="social-id">/logobrand.vn</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Shortcut placed beautifully top-right under the header -->
+    <div class="noise-overlay"></div>
+    <div class="cursor-dot"></div>
+
+    <section id="hero">
+        <div class="hero-image-container">
+            <img src="https://picsum.photos/seed/vt_hero/1920/1080" class="hero-img">
+            <h1 class="main-heading">VUNG TAU<br>COASTAL BREEZE</h1>
+        </div>
+    </section>
+
+    <section id="section-intro">
+        <div class="intro-row">
+            <div class="intro-text">
+                <p class="intro-body" id="intro-para">
+                    The gentle breeze coming off the coast carries the salty, refreshing kiss of the South China Sea. As the sun begins to set, the entire shoreline is painted in brilliant strokes of amber, violet, and soft pink. Vung Tau offers an unadulterated escape from the restless city, where the rhythmic crashing of waves against rocky cliffs creates a natural symphony.
+                </p>
+            </div>
+            <div class="photo-strip">
+                <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt1/1080/720"><div class="photo-caption">Coastal hues</div></div>
+                <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt2/1080/720"><div class="photo-caption">Ocean waves</div></div>
+                <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt3/1080/720"><div class="photo-caption">Amber sunset</div></div>
+                <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt4/1080/720"><div class="photo-caption">Rocky cliffs</div></div>
+                <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt5/1080/720"><div class="photo-caption">Peaceful escape</div></div>
+                <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt6/1080/720"><div class="photo-caption">Horizon line</div></div>
+                <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt7/1080/720"><div class="photo-caption">Salt breeze</div></div>
+                <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt8/1080/720"><div class="photo-caption">Maritime glow</div></div>
+                <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt9/1080/720"><div class="photo-caption">Seaside stroll</div></div>
+                <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt10/1080/720"><div class="photo-caption">Evening tide</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-two">
+        <div class="s2-layout">
+            <div class="s2-left">
+                <div class="s2-heading-mask"><h2 class="s2-heading">TRANQUIL SHORES</h2></div>
+                <div class="s2-parts-container">
+                    <div class="s2-part-mask"><p class="s2-part">The lighthouse beam cuts through the evening mist...</p></div>
+                    <div class="s2-part-mask"><p class="s2-part">...casting a golden trail across the dark waters.</p></div>
+                    <div class="s2-part-mask"><p class="s2-part">Fishing boats bob gently in the distant harbor...</p></div>
+                    <div class="s2-part-mask"><p class="s2-part">...returning gracefully from a long day at sea.</p></div>
+                    <div class="s2-part-mask"><p class="s2-part">A beautiful, profound serenity settles over the coastal town.</p></div>
+                </div>
+            </div>
+            <div class="s2-right">
+                <div class="s2-col left-col">
+                    <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt11/1080/1364"><div class="photo-caption">Lighthouse beam</div></div>
+                    <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt12/1080/1364"><div class="photo-caption">Golden trail</div></div>
+                    <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt13/1080/1364"><div class="photo-caption">Fishing boats</div></div>
+                    <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt14/1080/1364"><div class="photo-caption">Harbor lights</div></div>
+                    <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt15/1080/1364"><div class="photo-caption">Evening mist</div></div>
+                </div>
+                <div class="s2-col right-col">
+                    <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt16/1080/1364"><div class="photo-caption">Distant horizon</div></div>
+                    <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt17/1080/1364"><div class="photo-caption">Coastal serenity</div></div>
+                    <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt18/1080/1364"><div class="photo-caption">Bobbing ships</div></div>
+                    <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt19/1080/1364"><div class="photo-caption">Sea breeze</div></div>
+                    <div class="photo-wrapper"><img src="https://picsum.photos/seed/vt20/1080/1364"><div class="photo-caption">Night tide</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-three">
+        <div class="s3-phrases-wrapper">
+            <div class="s3-mask"><div class="s3-mover"><div class="s3-text-item bottom-text">CRASHING WAVES</div><div class="s3-text-item top-text">CRASHING WAVES</div></div></div>
+            <div class="s3-mask"><div class="s3-mover"><div class="s3-text-item bottom-text">SEAFOOD AROMAS</div><div class="s3-text-item top-text">SEAFOOD AROMAS</div></div></div>
+            <div class="s3-mask"><div class="s3-mover"><div class="s3-text-item bottom-text">OCEAN BREEZE</div><div class="s3-text-item top-text">OCEAN BREEZE</div></div></div>
+            <div class="s3-mask"><div class="s3-mover"><div class="s3-text-item bottom-text">COASTAL ECHOES</div><div class="s3-text-item top-text">COASTAL ECHOES</div></div></div>
+            <div class="s3-mask"><div class="s3-mover"><div class="s3-text-item bottom-text">TRANQUIL NIGHTS</div><div class="s3-text-item top-text">TRANQUIL NIGHTS</div></div></div>
+        </div>
+        <div class="s3-photos-container">
+            <div class="s3-img left-img portrait"><img src="https://picsum.photos/seed/vt21/1080/1364" class="s3-img-inner hover-target"></div>
+            <div class="s3-img right-img portrait"><img src="https://picsum.photos/seed/vt22/1080/1364" class="s3-img-inner hover-target"></div>
+            <div class="s3-img left-img portrait"><img src="https://picsum.photos/seed/vt23/1080/1364" class="s3-img-inner hover-target"></div>
+            <div class="s3-img right-img portrait"><img src="https://picsum.photos/seed/vt24/1080/1364" class="s3-img-inner hover-target"></div>
+            <div class="s3-img left-img portrait"><img src="https://picsum.photos/seed/vt25/1080/1364" class="s3-img-inner hover-target"></div>
+            <div class="s3-img right-img square"><img src="https://picsum.photos/seed/vt26/1080/1080" class="s3-img-inner hover-target"></div>
+            <div class="s3-img left-img square"><img src="https://picsum.photos/seed/vt27/1080/1080" class="s3-img-inner hover-target"></div>
+            <div class="s3-img right-img square"><img src="https://picsum.photos/seed/vt28/1080/1080" class="s3-img-inner hover-target"></div>
+            <div class="s3-img left-img square"><img src="https://picsum.photos/seed/vt29/1080/1080" class="s3-img-inner hover-target"></div>
+            <div class="s3-img right-img square"><img src="https://picsum.photos/seed/vt30/1080/1080" class="s3-img-inner hover-target"></div>
+        </div>
+    </section>
+
+    <section id="s4-container">
+        <div id="section-four">
+            <p class="s4-body" id="s4-text-wrap" data-s4-text="Whether you travel simply to wander this coastal retreat, or you choose to settle here to embrace a tranquil seaside lifestyle, Vung Tau is a canvas of natural relaxation. Step onto the beaches, breathe the salty air, and let the magnificent tides inspire your own unfolding story."></p>
+        </div>
+        <div id="section-final">
+            <a href="gallery.html?collection=vungtau" class="place-gallery-btn">View Gallery Collection</a>
+            <div class="marquee-wrapper">
+                <div class="marquee-track left"><span>WELCOME TO VUNG TAU &bull; WELCOME TO VUNG TAU &bull;&nbsp;</span><span>WELCOME TO VUNG TAU &bull; WELCOME TO VUNG TAU &bull;&nbsp;</span></div>
+                <div class="marquee-track right"><span>WELCOME TO VUNG TAU &bull; WELCOME TO VUNG TAU &bull;&nbsp;</span><span>WELCOME TO VUNG TAU &bull; WELCOME TO VUNG TAU &bull;&nbsp;</span></div>
+            </div>
+            <div class="summary-container" id="summary-container">
+                <p class="summary-text" id="summary-text">"Vung Tau is an endless canvas of ocean breezes and calming tides. From picturesque lighthouse reflections on the dark waters to the raw, warm embrace of its coastal shores, it weaves an awe-inspiring dance of nature and peace. Allow the magnificent serenity to write your own unfolding story."</p>
+            </div>
+            <img src="https://picsum.photos/seed/vt40/1080/1920" class="final-img">
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="place-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can Even - About</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body data-page="about" class="about-page">
+    <div id="app">
+        <!-- HEADER -->
+        <header class="header blend-diff" id="header">
+            <div class="logo">LOGO.</div>
+            <nav class="header-nav">
+                <a href="index.html?skip=1#location-anchor">Location</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About</a>
+                <!-- You can remove Contact here or hook to mailto directly since popup relies on the menu -->
+                <a href="mailto:sggirez@gmail.com">Contact</a>
+            </nav>
+        </header>
+
+        <!-- HAMBURGER -->
+        <button class="hamburger">
+            <div class="hamburger-inner">
+                <div class="line top-line"></div>
+                <div class="line middle-line"></div>
+                <div class="line bottom-line"></div>
+                <div class="x-line x-line-1"></div>
+                <div class="x-line x-line-2"></div>
+            </div>
+        </button>
+
+        <!-- FULLSCREEN MENU -->
+        <div class="menu-overlay">
+            <div class="menu-content">
+                <div class="menu-link-container"><a href="index.html?skip=1" class="menu-link" data-text="HOME">HOME</a>
+                </div>
+                <hr class="menu-hr">
+                <div class="menu-link-container"><a href="index.html?skip=1#location-anchor" class="menu-link"
+                        data-text="LOCATION" id="nav-loc">LOCATION</a></div>
+                <hr class="menu-hr">
+                <div class="menu-link-container"><a href="gallery.html" class="menu-link"
+                        data-text="GALLERY">GALLERY</a></div>
+                <hr class="menu-hr">
+                <div class="menu-link-container"><a href="about.html" class="menu-link" data-text="ABOUT">ABOUT</a>
+                </div>
+                <hr class="menu-hr">
+                <div class="menu-link-container"><a href="#" class="menu-link" id="menu-contact-btn"
+                        data-text="CONTACT">CONTACT</a></div>
+            </div>
+        </div>
+
+        <!-- Contact Popup Board -->
+        <div class="contact-board-overlay" id="contact-board">
+            <div class="contact-board-content">
+                <h2>Get in touch.</h2>
+                <div class="social-links">
+                    <a href="mailto:hello@logobrand.com" target="_blank" class="social-btn">
+                        <span class="social-title">Email</span>
+                        <span class="social-id">hello@logobrand.com</span>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-btn">
+                        <span class="social-title">Instagram</span>
+                        <span class="social-id">@logobrand</span>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" class="social-btn">
+                        <span class="social-title">Facebook</span>
+                        <span class="social-id">/logobrand.vn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main id="main-content" class="blur-wrapper">
+            <div class="app-container">
+                <div class="left-panel">
+                    <div class="info-block">
+                        <p class="subtitle">Photgrapher and Videographer</p>
+                        <h2 class="identity-title">Hoang Ha <span class="text-muted">(Zeriggs)</span></h2>
+                        <p class="identity-text">
+                            I am currently a final-year Digital Media student at RMIT University Vietnam. My journey
+                            began in Grade 11, laying the foundation to explore digital media and discover my strengths
+                            in photography, videography, and post-production.
+                        </p>
+                        <button class="btn-projects">
+                            <span>Previous projects</span>
+                        </button>
+                    </div>
+
+                    <div class="paragraphs-block">
+                        <p class="scroll-p p1">
+                            Through various photography and videography projects, I developed a strong interest in
+                            cinematic composition, camera angles, and visual effects that enhance the emotional depth of
+                            a scene.
+                        </p>
+                        <p class="scroll-p p2">
+                            For me, every photograph and footage should communicate a clear emotion and meaningful story
+                            through visual language. The moments and environments I capture often reflect personal
+                            experiences.
+                        </p>
+                        <p class="scroll-p p3">
+                            Color also plays an important role in my creative process, as it strongly affects mood and
+                            emotional perception. Through color grading, I can shape different visual identities.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="right-panel">
+                    <div class="photo-frame">
+                        <div class="photo-track">
+                            <img src="https://picsum.photos/seed/ideal1/900/1600" alt="Cinematic composition">
+                            <img src="https://picsum.photos/seed/ideal2/900/1600" alt="Visual language">
+                            <img src="https://picsum.photos/seed/ideal3/900/1600" alt="Color grading">
+                            <img src="https://picsum.photos/seed/ideal1/900/1600" alt="Cinematic composition clone">
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="title-profile">PROFILE</h1>
+            </div>
+
+            <!-- PROJECTS MODAL -->
+            <div class="modal">
+                <div class="modal-overlay"></div>
+                <div class="modal-content">
+                    <h3 class="modal-title">Selected Works</h3>
+                    <ul class="project-list">
+                        <li class="project-item" data-img="https://picsum.photos/seed/saigon/800/450">Saigon After Dark
+                        </li>
+                        <li class="project-item" data-img="https://picsum.photos/seed/dalat/800/450">Through the streets
+                            of Da Lat</li>
+                        <li class="project-item" data-img="https://picsum.photos/seed/thai/800/450">Textures in Thailand
+                        </li>
+                        <li class="project-item" data-img="https://picsum.photos/seed/oceania/800/450">Oceania of
+                            Central Vietnam</li>
+                    </ul>
+                </div>
+                <div class="cursor-thumbnail">
+                    <img src="" alt="Thumbnail Follower">
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

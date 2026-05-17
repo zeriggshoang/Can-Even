@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can Even - Gallery</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body data-page="gallery" class="gallery-page">
+    <div id="app">
+        <!-- HEADER -->
+        <header class="header" id="header">
+            <div class="logo">LOGO.</div>
+            <nav class="header-nav">
+                <a href="index.html?skip=1#location-anchor">Location</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About</a>
+                <a href="#" id="header-contact-btn">Contact</a>
+            </nav>
+        </header>
+
+        <!-- HAMBURGER -->
+        <button class="hamburger">
+            <div class="hamburger-inner">
+                <div class="line top-line"></div>
+                <div class="line middle-line"></div>
+                <div class="line bottom-line"></div>
+                <div class="x-line x-line-1"></div>
+                <div class="x-line x-line-2"></div>
+            </div>
+        </button>
+
+        <!-- FULLSCREEN MENU -->
+        <div class="menu-overlay">
+            <div class="menu-content">
+                <div class="menu-link-container"><a href="index.html?skip=1" class="menu-link" data-text="HOME">HOME</a>
+                </div>
+                <hr class="menu-hr">
+                <div class="menu-link-container"><a href="index.html?skip=1#location-anchor" class="menu-link"
+                        data-text="LOCATION" id="nav-loc">LOCATION</a></div>
+                <hr class="menu-hr">
+                <div class="menu-link-container"><a href="gallery.html" class="menu-link"
+                        data-text="GALLERY">GALLERY</a></div>
+                <hr class="menu-hr">
+                <div class="menu-link-container"><a href="about.html" class="menu-link" data-text="ABOUT">ABOUT</a>
+                </div>
+                <hr class="menu-hr">
+                <div class="menu-link-container"><a href="#" class="menu-link" id="menu-contact-btn"
+                        data-text="CONTACT">CONTACT</a></div>
+            </div>
+        </div>
+
+        <!-- Contact Popup Board -->
+        <div class="contact-board-overlay" id="contact-board">
+            <div class="contact-board-content">
+                <h2>Get in touch.</h2>
+                <div class="social-links">
+                    <a href="mailto:hello@logobrand.com" target="_blank" class="social-btn">
+                        <span class="social-title">Email</span>
+                        <span class="social-id">hello@logobrand.com</span>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-btn">
+                        <span class="social-title">Instagram</span>
+                        <span class="social-id">@logobrand</span>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" class="social-btn">
+                        <span class="social-title">Facebook</span>
+                        <span class="social-id">/logobrand.vn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main id="main-content" class="blur-wrapper">
+            <section class="view-container" id="menuView">
+                <h1 class="menu-title">GALLERY</h1>
+                <div class="menu-3d-stack" id="menuStack"></div>
+                <div class="menu-bottom-text">
+                    <h2 id="menuCollectionName">Collection Name</h2>
+                    <p class="instruction">Press ENTER to access</p>
+                </div>
+            </section>
+
+            <section class="view-container" id="galleryView" style="visibility: hidden; opacity: 0;">
+                <button id="backBtn" class="back-btn"><span class="btn-line"></span> BACK TO MENU</button>
+                <h1 id="galleryCenterTitle" class="gallery-center-title">Title</h1>
+                <h2 id="galleryComingSoon" class="coming-soon-text" style="display: none; mix-blend-mode: difference;">COMING SOON</h2>
+                <div class="gallery-wrapper">
+                    <div class="gallery-grid" id="grid"></div>
+                </div>
+            </section>
+
+            <div class="instruction-board" id="instructionBoard">
+                <div class="board-icon" id="boardIcon">i</div>
+                <div class="board-text" id="boardText">
+                    <p><strong>Hold Middle Mouse</strong> to drag the photo grid</p>
+                    <p><strong>Scroll</strong> to navigate columns</p>
+                    <p><strong>Press Enter</strong> to open a collection</p>
+                    <p><strong>Press ESC</strong> to exit</p>
+                </div>
+            </div>
+
+            <div class="detail-view" id="detailView">
+                <div class="detail-left">
+                    <img id="detailImg" src="" alt="Selected Photo">
+                </div>
+                <div class="detail-right">
+                    <div class="text-wrapper">
+                        <div class="line-wrapper">
+                            <div class="block-reveal"></div>
+                            <p id="detailDate" class="content date">May 14, 2026 &mdash; Photography</p>
+                        </div>
+                        <div class="line-wrapper title-wrapper">
+                            <div class="block-reveal"></div>
+                            <h2 id="detailTitle" class="content">Photo Title</h2>
+                        </div>
+                        <div class="line-wrapper desc-wrapper">
+                            <div class="block-reveal"></div>
+                            <p id="detailDesc" class="content description">This is a detailed visual log of the selected
+                                photograph. The subtle contrast and framing encapsulate a specific moment in time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

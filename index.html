@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can Even - Experience</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Smooth Scrolling & GSAP -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body data-page="home">
+    <div id="app">
+        <!-- Preload Sequence -->
+        <div id="preload">
+            <div class="poem-container">
+                <div class="side-wrap left-wrap">
+                    <div class="block-layer block-07"></div>
+                    <div class="block-layer block-f5"></div>
+                    <div class="slider" id="left-slider">
+                        <div class="slide">A quiet street&nbsp;</div>
+                        <div class="slide">A passing light&nbsp;</div>
+                        <div class="slide">A single glance&nbsp;</div>
+                        <div class="slide">And time&nbsp;</div>
+                    </div>
+                </div>
+                <div class="center-wrap">
+                    <span id="word-can">can</span>
+                    <div id="even-wrapper"><span id="word-even">even</span></div>
+                </div>
+                <div class="side-wrap right-wrap">
+                    <div class="block-layer block-07"></div>
+                    <div class="block-layer block-f5"></div>
+                    <div class="slider" id="right-slider">
+                        <div class="slide">&nbsp;hold a thousand stories,</div>
+                        <div class="slide">&nbsp;soften every scar.</div>
+                        <div class="slide">&nbsp;become a memory,</div>
+                        <div class="slide">&nbsp;pause where you are.</div>
+                    </div>
+                </div>
+            </div>
+            <div id="hint-msg">Click on the word to enter a website</div>
+        </div>
+
+        <!-- HEADER -->
+        <header class="header" id="header">
+            <div class="logo">LOGO.</div>
+            <nav class="header-nav">
+                <a href="#location-anchor">Location</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About</a>
+                <a href="#" id="header-contact-btn">Contact</a>
+            </nav>
+        </header>
+
+        <!-- HAMBURGER -->
+        <button class="hamburger">
+            <div class="hamburger-inner">
+                <div class="line top-line"></div>
+                <div class="line middle-line"></div>
+                <div class="line bottom-line"></div>
+                <div class="x-line x-line-1"></div>
+                <div class="x-line x-line-2"></div>
+            </div>
+        </button>
+
+        <!-- FULLSCREEN MENU -->
+        <div class="menu-overlay">
+            <div class="menu-content">
+                <div class="menu-link-container"><a href="index.html?skip=1" class="menu-link" data-text="HOME">HOME</a>
+                </div>
+                <hr class="menu-hr">
+                <div class="menu-link-container"><a href="#location-anchor" class="menu-link" data-text="LOCATION"
+                        id="nav-loc">LOCATION</a></div>
+                <hr class="menu-hr">
+                <div class="menu-link-container"><a href="gallery.html" class="menu-link"
+                        data-text="GALLERY">GALLERY</a></div>
+                <hr class="menu-hr">
+                <div class="menu-link-container"><a href="about.html" class="menu-link" data-text="ABOUT">ABOUT</a>
+                </div>
+                <hr class="menu-hr">
+                <div class="menu-link-container"><a href="#" class="menu-link" id="menu-contact-btn"
+                        data-text="CONTACT">CONTACT</a></div>
+            </div>
+        </div>
+
+        <!-- Contact Popup Board -->
+        <div class="contact-board-overlay" id="contact-board">
+            <div class="contact-board-content">
+                <h2>Get in touch.</h2>
+                <div class="social-links">
+                    <a href="mailto:sggirez@gmail.com" target="_blank" class="social-btn">
+                        <span class="social-title">Email</span>
+                        <span class="social-id">sggirez@gmail.com</span>
+                    </a>
+                    <a href="https://www.instagram.com/zeriggs.hoang/" target="_blank" class="social-btn">
+                        <span class="social-title">Instagram</span>
+                        <span class="social-id">@zeriggs.hoang</span>
+                    </a>
+                    <a href="https://www.facebook.com/zeriggs.hoang/" target="_blank" class="social-btn">
+                        <span class="social-title">Facebook</span>
+                        <span class="social-id">Zeriggs Hoang</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main id="main-content" class="blur-wrapper">
+            <!-- Hero -->
+            <section id="hero">
+                <div id="model-container"></div>
+                <div id="revived-text-container">
+                    <span class="giant-text">can</span>
+                    <span class="giant-text even-text">even</span>
+                </div>
+            </section>
+
+            <!-- Scroll Animation UI/UX Container -->
+            <div class="pin-container">
+                <div class="intro-panel">
+                    <h1 class="intro-heading">Shaping the future<br>of digital experiences.</h1>
+                    <p class="intro-body">
+                        Welcome to the forefront of modern design. Every pixel, every interaction, and every seamless
+                        transition is crafted with intentionality and purpose. We believe in creating immersive visual
+                        journeys that captivate your audience, merging aesthetic beauty with structural logic. As you
+                        scroll, watch the narrative unfold—layer by layer, revealing the depth of our creative process
+                        and the passion behind our work. Let’s embark on a journey where creativity meets technical
+                        excellence.
+                    </p>
+                </div>
+
+                <div class="photo-container">
+                    <div class="photo-item photo-1 portrait"><img src="https://picsum.photos/800/1422?random=1"></div>
+                    <div class="photo-item photo-2 landscape"><img src="https://picsum.photos/1600/900?random=2"></div>
+                    <div class="photo-item photo-3 landscape"><img src="https://picsum.photos/1600/900?random=3"></div>
+                    <div class="photo-item photo-4 portrait"><img src="https://picsum.photos/800/1422?random=4"></div>
+                    <div class="photo-item photo-5 portrait"><img src="https://picsum.photos/800/1422?random=5"></div>
+                    <div class="photo-item photo-6 landscape"><img src="https://picsum.photos/1600/900?random=6"></div>
+                </div>
+
+                <div class="massive-text-container">
+                    <h2 class="massive-text">Time, moments, and perception pass quietly through life—unless we choose to
+                        capture and make them stay.</h2>
+                </div>
+            </div>
+
+            <!-- Location Section (7 Panels) -->
+            <div id="location-anchor"></div>
+            <div id="fixed-viewport">
+                <h1 class="loc-intro-title">“Through the lens of the artist,<br>every captured moment reveals<br>a
+                    unique beauty<br>beyond ordinary perception.”</h1>
+                <section class="locations-container">
+                    <div class="bars-wrapper">
+                        <!-- Panel 1 -->
+                        <article class="panel">
+                            <div class="bar-header">
+                                <h2 class="bar-title">Ho Chi Minh City</h2>
+                            </div>
+                            <div class="bar-content-wrapper">
+                                <div class="scroll-area" data-lenis-prevent>
+                                    <div class="sticky-section">
+                                        <div class="photo-sticky">
+                                            <div class="photo-stack">
+                                                <img src="https://picsum.photos/1600/900?random=11" class="crop-photo"
+                                                    style="z-index: 5">
+                                                <img src="https://picsum.photos/1600/900?random=12" class="crop-photo"
+                                                    style="z-index: 4">
+                                                <img src="https://picsum.photos/1600/900?random=13" class="crop-photo"
+                                                    style="z-index: 3">
+                                                <img src="https://picsum.photos/1600/900?random=14" class="crop-photo"
+                                                    style="z-index: 2">
+                                                <img src="https://picsum.photos/1600/900?random=15" class="last-photo"
+                                                    style="z-index: 1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <section class="text-and-button">
+                                        <h3>The Metropolis</h3>
+                                        <p>Walking through the energetic heart of Ho Chi Minh City, there is a pulse
+                                            that never truly settles. The air is thick with the scent of street food
+                                            roasting over open coals, contrasting sharply with the pristine glass
+                                            skyscrapers reaching into the clouds.</p>
+                                        <p>In every alleyway, a different story unfolds. Motorbikes flow like water down
+                                            the grand boulevards, creating an orchestrated chaos that feels inherently
+                                            alive. Beneath it all, a deep, historical reverence remains locked within
+                                            the French colonial architecture.</p>
+                                        <button class="enter-btn"
+                                            onclick="window.location.href='hochiminh.html'"><span>Enter
+                                                Location</span></button>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Panel 2 -->
+                        <article class="panel">
+                            <div class="bar-header">
+                                <h2 class="bar-title">Vung Tau</h2>
+                            </div>
+                            <div class="bar-content-wrapper">
+                                <div class="scroll-area" data-lenis-prevent>
+                                    <div class="sticky-section">
+                                        <div class="photo-sticky">
+                                            <div class="photo-stack">
+                                                <img src="https://picsum.photos/1600/900?random=21" class="crop-photo"
+                                                    style="z-index: 5">
+                                                <img src="https://picsum.photos/1600/900?random=22" class="crop-photo"
+                                                    style="z-index: 4">
+                                                <img src="https://picsum.photos/1600/900?random=23" class="crop-photo"
+                                                    style="z-index: 3">
+                                                <img src="https://picsum.photos/1600/900?random=24" class="crop-photo"
+                                                    style="z-index: 2">
+                                                <img src="https://picsum.photos/1600/900?random=25" class="last-photo"
+                                                    style="z-index: 1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <section class="text-and-button">
+                                        <h3>Coastal Escape</h3>
+                                        <p>The gentle breeze coming off the coast carries the salty, refreshing kiss of
+                                            the South China Sea. As the sun begins to set, the entire shoreline is
+                                            painted in brilliant strokes of amber, violet, and soft pink.</p>
+                                        <p>Standing at the peak of the lighthouse, looking out across the vast,
+                                            uninterrupted ocean, the noise of the city washes away. It is a moment of
+                                            pure, unadulterated peace.</p>
+                                        <button class="enter-btn"
+                                            onclick="window.location.href='vungtau.html'"><span>Enter
+                                                Location</span></button>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Panel 3 -->
+                        <article class="panel">
+                            <div class="bar-header">
+                                <h2 class="bar-title">Da Lat</h2>
+                            </div>
+                            <div class="bar-content-wrapper">
+                                <div class="scroll-area" data-lenis-prevent>
+                                    <div class="sticky-section">
+                                        <div class="photo-sticky">
+                                            <div class="photo-stack">
+                                                <img src="https://picsum.photos/1600/900?random=31" class="crop-photo"
+                                                    style="z-index: 5">
+                                                <img src="https://picsum.photos/1600/900?random=32" class="crop-photo"
+                                                    style="z-index: 4">
+                                                <img src="https://picsum.photos/1600/900?random=33" class="crop-photo"
+                                                    style="z-index: 3">
+                                                <img src="https://picsum.photos/1600/900?random=34" class="crop-photo"
+                                                    style="z-index: 2">
+                                                <img src="https://picsum.photos/1600/900?random=35" class="last-photo"
+                                                    style="z-index: 1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <section class="text-and-button">
+                                        <h3>City of Eternal Spring</h3>
+                                        <p>Tucked away in the Central Highlands, the chilling morning mist rolls heavily
+                                            through the ancient pine forests. Da Lat feels entirely separated from the
+                                            rest of the country, acting as a romantic hideaway suspended in time.</p>
+                                        <p>The blooming hydrangea fields and the gothic-style mansions emerging from the
+                                            fog create a beautifully haunting landscape, inviting you to simply sit,
+                                            breathe, and reflect.</p>
+                                        <button class="enter-btn"
+                                            onclick="window.location.href='dalat.html'"><span>Enter
+                                                Location</span></button>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Panel 4 -->
+                        <article class="panel">
+                            <div class="bar-header">
+                                <h2 class="bar-title">Vinh Hy</h2>
+                            </div>
+                            <div class="bar-content-wrapper">
+                                <div class="scroll-area" data-lenis-prevent>
+                                    <div class="sticky-section">
+                                        <div class="photo-sticky">
+                                            <div class="photo-stack">
+                                                <img src="https://picsum.photos/1600/900?random=41" class="crop-photo"
+                                                    style="z-index: 5">
+                                                <img src="https://picsum.photos/1600/900?random=42" class="crop-photo"
+                                                    style="z-index: 4">
+                                                <img src="https://picsum.photos/1600/900?random=43" class="crop-photo"
+                                                    style="z-index: 3">
+                                                <img src="https://picsum.photos/1600/900?random=44" class="crop-photo"
+                                                    style="z-index: 2">
+                                                <img src="https://picsum.photos/1600/900?random=45" class="last-photo"
+                                                    style="z-index: 1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <section class="text-and-button">
+                                        <h3>The Hidden Bay</h3>
+                                        <p>A fiercely guarded secret of the coastline. The dramatic, jagged cliffs
+                                            plunge violently into waters so crystal clear that they mirror the sky
+                                            perfectly. Exploring Vinh Hy feels like discovering a pristine, untouched
+                                            slice of the Earth.</p>
+                                        <p>The winding coastal roads leading into the bay offer sweeping, cinematic
+                                            views of nature’s raw, unfiltered power.</p>
+                                        <button class="enter-btn"
+                                            onclick="window.location.href='vinhhy.html'"><span>Enter
+                                                Location</span></button>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Panel 5 -->
+                        <article class="panel">
+                            <div class="bar-header">
+                                <h2 class="bar-title">Northeast Vietnam</h2>
+                            </div>
+                            <div class="bar-content-wrapper">
+                                <div class="scroll-area" data-lenis-prevent>
+                                    <div class="sticky-section">
+                                        <div class="photo-sticky">
+                                            <div class="photo-stack">
+                                                <img src="https://picsum.photos/1600/900?random=51" class="crop-photo"
+                                                    style="z-index: 5">
+                                                <img src="https://picsum.photos/1600/900?random=52" class="crop-photo"
+                                                    style="z-index: 4">
+                                                <img src="https://picsum.photos/1600/900?random=53" class="crop-photo"
+                                                    style="z-index: 3">
+                                                <img src="https://picsum.photos/1600/900?random=54" class="crop-photo"
+                                                    style="z-index: 2">
+                                                <img src="https://picsum.photos/1600/900?random=55" class="last-photo"
+                                                    style="z-index: 1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <section class="text-and-button">
+                                        <h3>Majestic Peaks</h3>
+                                        <p>The sheer scale of the mountains here defies logic. Cascading, vividly green
+                                            rice terraces cut into the sides of the Earth, stretching as far as the eye
+                                            can see. The indigenous culture remains deeply woven into the landscape
+                                            itself.</p>
+                                        <p>Every winding turn on these mountain passes presents a humbling reminder of
+                                            our smallness amidst the grand theater of nature.</p>
+                                        <button class="enter-btn"
+                                            onclick="window.location.href='northeast.html'"><span>Enter
+                                                Location</span></button>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Panel 6 -->
+                        <article class="panel">
+                            <div class="bar-header">
+                                <h2 class="bar-title">Pattaya</h2>
+                            </div>
+                            <div class="bar-content-wrapper">
+                                <div class="scroll-area" data-lenis-prevent>
+                                    <div class="sticky-section">
+                                        <div class="photo-sticky">
+                                            <div class="photo-stack">
+                                                <img src="https://picsum.photos/1600/900?random=61" class="crop-photo"
+                                                    style="z-index: 5">
+                                                <img src="https://picsum.photos/1600/900?random=62" class="crop-photo"
+                                                    style="z-index: 4">
+                                                <img src="https://picsum.photos/1600/900?random=63" class="crop-photo"
+                                                    style="z-index: 3">
+                                                <img src="https://picsum.photos/1600/900?random=64" class="crop-photo"
+                                                    style="z-index: 2">
+                                                <img src="https://picsum.photos/1600/900?random=65" class="last-photo"
+                                                    style="z-index: 1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <section class="text-and-button">
+                                        <h3>The Vibrant Shores</h3>
+                                        <p>Famous for its energetic coastal life, Pattaya offers a contrasting blend of
+                                            tranquil temple sanctuaries like the Sanctuary of Truth and lively, bustling
+                                            beachfronts.</p>
+                                        <p>The neon-lit streets tell a modern story of nightlife, while the surrounding
+                                            islands harbor quiet, crystal-clear escapes for those seeking peace by the
+                                            water.</p>
+                                        <button class="enter-btn"
+                                            onclick="window.location.href='pattaya.html'"><span>Enter
+                                                Location</span></button>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Panel 7 -->
+                        <article class="panel">
+                            <div class="bar-header">
+                                <h2 class="bar-title">Bangkok</h2>
+                            </div>
+                            <div class="bar-content-wrapper">
+                                <div class="scroll-area" data-lenis-prevent>
+                                    <div class="sticky-section">
+                                        <div class="photo-sticky">
+                                            <div class="photo-stack">
+                                                <img src="https://picsum.photos/1600/900?random=71" class="crop-photo"
+                                                    style="z-index: 5">
+                                                <img src="https://picsum.photos/1600/900?random=72" class="crop-photo"
+                                                    style="z-index: 4">
+                                                <img src="https://picsum.photos/1600/900?random=73" class="crop-photo"
+                                                    style="z-index: 3">
+                                                <img src="https://picsum.photos/1600/900?random=74" class="crop-photo"
+                                                    style="z-index: 2">
+                                                <img src="https://picsum.photos/1600/900?random=75" class="last-photo"
+                                                    style="z-index: 1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <section class="text-and-button">
+                                        <h3>The City of Angels</h3>
+                                        <p>A sensory overload in the best way possible. Bangkok seamlessly weaves
+                                            towering modern skyscrapers with majestic, golden temples. The street food
+                                            culture is unparalleled, filling the humid air with intoxicating aromas.</p>
+                                        <p>The Chao Phraya River serves as the beating, historical heart of this
+                                            restless metropolis, ferrying endless stories through the city's veins.</p>
+                                        <button class="enter-btn"
+                                            onclick="window.location.href='bangkok.html'"><span>Enter
+                                                Location</span></button>
+                                    </section>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
