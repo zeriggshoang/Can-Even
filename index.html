@@ -7,7 +7,6 @@
     <title>Can Even - Experience</title>
     <link rel="stylesheet" href="style.css">
 
-    <!-- Smooth Scrolling & GSAP -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -49,7 +48,9 @@
 
         <!-- HEADER -->
         <header class="header" id="header">
-            <div class="logo">LOGO.</div>
+            <a href="index.html?skip=1" class="logo">
+                <img src="fulfilledlogo.png" alt="Logo" class="logo-img">
+            </a>
             <nav class="header-nav">
                 <a href="#location-anchor">Location</a>
                 <a href="gallery.html">Gallery</a>
@@ -70,7 +71,7 @@
         </button>
 
         <!-- FULLSCREEN MENU -->
-        <div class="menu-overlay">
+        <div class="menu-overlay gradient-dark">
             <div class="menu-content">
                 <div class="menu-link-container"><a href="index.html?skip=1" class="menu-link" data-text="HOME">HOME</a>
                 </div>
@@ -91,7 +92,7 @@
 
         <!-- Contact Popup Board -->
         <div class="contact-board-overlay" id="contact-board">
-            <div class="contact-board-content">
+            <div class="contact-board-content gradient-dark">
                 <h2>Get in touch.</h2>
                 <div class="social-links">
                     <a href="mailto:sggirez@gmail.com" target="_blank" class="social-btn">
@@ -112,7 +113,6 @@
 
         <!-- Main Content -->
         <main id="main-content" class="blur-wrapper">
-            <!-- Hero -->
             <section id="hero">
                 <div id="model-container"></div>
                 <div id="revived-text-container">
@@ -121,36 +121,38 @@
                 </div>
             </section>
 
-            <!-- Scroll Animation UI/UX Container -->
             <div class="pin-container">
                 <div class="intro-panel">
-                    <h1 class="intro-heading">Shaping the future<br>of digital experiences.</h1>
+                    <h1 class="intro-heading">Welcome to my journey</h1>
                     <p class="intro-body">
-                        Welcome to the forefront of modern design. Every pixel, every interaction, and every seamless
-                        transition is crafted with intentionality and purpose. We believe in creating immersive visual
-                        journeys that captivate your audience, merging aesthetic beauty with structural logic. As you
-                        scroll, watch the narrative unfold—layer by layer, revealing the depth of our creative process
-                        and the passion behind our work. Let’s embark on a journey where creativity meets technical
-                        excellence.
+                        Welcome to my journey, where I share the places I have explored through a collection of photos
+                        and words that capture each moment along the way. Every destination reflects experiences,
+                        stories, and impressions I gathered during my travels, presented as a visual and written gallery
+                        that preserves the joy and meaning of each place. I hope these contents help you better
+                        understand the beauty of the locations I visited and inspire your curiosity to explore the world
+                        and create your own journey.
                     </p>
                 </div>
 
                 <div class="photo-container">
-                    <div class="photo-item photo-1 portrait"><img src="https://picsum.photos/800/1422?random=1"></div>
-                    <div class="photo-item photo-2 landscape"><img src="https://picsum.photos/1600/900?random=2"></div>
-                    <div class="photo-item photo-3 landscape"><img src="https://picsum.photos/1600/900?random=3"></div>
-                    <div class="photo-item photo-4 portrait"><img src="https://picsum.photos/800/1422?random=4"></div>
-                    <div class="photo-item photo-5 portrait"><img src="https://picsum.photos/800/1422?random=5"></div>
-                    <div class="photo-item photo-6 landscape"><img src="https://picsum.photos/1600/900?random=6"></div>
+                    <div class="photo-item photo-1 portrait"><img src="photo collections/dalat/dalat-11.jpg"></div>
+                    <div class="photo-item photo-2 landscape"><img src="photo collections/ha giang/IMG_7560.jpg"></div>
+                    <div class="photo-item photo-3 landscape"><img src="photo collections/ho chi minh/IMG_0181.jpg">
+                    </div>
+                    <div class="photo-item photo-4 portrait"><img src="photo collections/thailand/bangkok/14.jpg"></div>
+                    <div class="photo-item photo-5 portrait"><img src="photo collections/thailand/day1/thailand-04.jpg">
+                    </div>
+                    <div class="photo-item photo-6 landscape"><img src="photo collections/vinh hy/IMG_4937.jpg"></div>
                 </div>
 
                 <div class="massive-text-container">
-                    <h2 class="massive-text">Time, moments, and perception pass quietly through life—unless we choose to
+                    <h2 class="massive-text">Time, moments, and perception pass quietly through life, unless we choose
+                        to
                         capture and make them stay.</h2>
                 </div>
             </div>
 
-            <!-- Location Section (7 Panels) -->
+            <!-- Location Section -->
             <div id="location-anchor"></div>
             <div id="fixed-viewport">
                 <h1 class="loc-intro-title">“Through the lens of the artist,<br>every captured moment reveals<br>a
@@ -167,15 +169,15 @@
                                     <div class="sticky-section">
                                         <div class="photo-sticky">
                                             <div class="photo-stack">
-                                                <img src="https://picsum.photos/1600/900?random=11" class="crop-photo"
+                                                <img src="photo collections/ho chi minh/IMG_0145.jpg" class="crop-photo"
                                                     style="z-index: 5">
-                                                <img src="https://picsum.photos/1600/900?random=12" class="crop-photo"
+                                                <img src="photo collections/ho chi minh/IMG_0150.jpg" class="crop-photo"
                                                     style="z-index: 4">
-                                                <img src="https://picsum.photos/1600/900?random=13" class="crop-photo"
+                                                <img src="photo collections/ho chi minh/IMG_0181.jpg" class="crop-photo"
                                                     style="z-index: 3">
-                                                <img src="https://picsum.photos/1600/900?random=14" class="crop-photo"
+                                                <img src="photo collections/ho chi minh/IMG_0208.jpg" class="crop-photo"
                                                     style="z-index: 2">
-                                                <img src="https://picsum.photos/1600/900?random=15" class="last-photo"
+                                                <img src="photo collections/ho chi minh/IMG_9975.jpg" class="last-photo"
                                                     style="z-index: 1">
                                             </div>
                                         </div>
@@ -204,35 +206,8 @@
                                 <h2 class="bar-title">Vung Tau</h2>
                             </div>
                             <div class="bar-content-wrapper">
-                                <div class="scroll-area" data-lenis-prevent>
-                                    <div class="sticky-section">
-                                        <div class="photo-sticky">
-                                            <div class="photo-stack">
-                                                <img src="https://picsum.photos/1600/900?random=21" class="crop-photo"
-                                                    style="z-index: 5">
-                                                <img src="https://picsum.photos/1600/900?random=22" class="crop-photo"
-                                                    style="z-index: 4">
-                                                <img src="https://picsum.photos/1600/900?random=23" class="crop-photo"
-                                                    style="z-index: 3">
-                                                <img src="https://picsum.photos/1600/900?random=24" class="crop-photo"
-                                                    style="z-index: 2">
-                                                <img src="https://picsum.photos/1600/900?random=25" class="last-photo"
-                                                    style="z-index: 1">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <section class="text-and-button">
-                                        <h3>Coastal Escape</h3>
-                                        <p>The gentle breeze coming off the coast carries the salty, refreshing kiss of
-                                            the South China Sea. As the sun begins to set, the entire shoreline is
-                                            painted in brilliant strokes of amber, violet, and soft pink.</p>
-                                        <p>Standing at the peak of the lighthouse, looking out across the vast,
-                                            uninterrupted ocean, the noise of the city washes away. It is a moment of
-                                            pure, unadulterated peace.</p>
-                                        <button class="enter-btn"
-                                            onclick="window.location.href='vungtau.html'"><span>Enter
-                                                Location</span></button>
-                                    </section>
+                                <div class="coming-soon-wrapper">
+                                    <h2 class="coming-soon-panel-text">COMING SOON</h2>
                                 </div>
                             </div>
                         </article>
@@ -247,15 +222,15 @@
                                     <div class="sticky-section">
                                         <div class="photo-sticky">
                                             <div class="photo-stack">
-                                                <img src="https://picsum.photos/1600/900?random=31" class="crop-photo"
+                                                <img src="photo collections/dalat/dalat-16.jpg" class="crop-photo"
                                                     style="z-index: 5">
-                                                <img src="https://picsum.photos/1600/900?random=32" class="crop-photo"
+                                                <img src="photo collections/dalat/dalat-18.jpg" class="crop-photo"
                                                     style="z-index: 4">
-                                                <img src="https://picsum.photos/1600/900?random=33" class="crop-photo"
+                                                <img src="photo collections/dalat/dalat-22.jpg" class="crop-photo"
                                                     style="z-index: 3">
-                                                <img src="https://picsum.photos/1600/900?random=34" class="crop-photo"
+                                                <img src="photo collections/dalat/IMG_4605.jpg" class="crop-photo"
                                                     style="z-index: 2">
-                                                <img src="https://picsum.photos/1600/900?random=35" class="last-photo"
+                                                <img src="photo collections/dalat/dalat-20.jpg" class="last-photo"
                                                     style="z-index: 1">
                                             </div>
                                         </div>
@@ -286,15 +261,15 @@
                                     <div class="sticky-section">
                                         <div class="photo-sticky">
                                             <div class="photo-stack">
-                                                <img src="https://picsum.photos/1600/900?random=41" class="crop-photo"
+                                                <img src="photo collections/vinh hy/IMG_4770.jpg" class="crop-photo"
                                                     style="z-index: 5">
-                                                <img src="https://picsum.photos/1600/900?random=42" class="crop-photo"
+                                                <img src="photo collections/vinh hy/IMG_4854.jpg" class="crop-photo"
                                                     style="z-index: 4">
-                                                <img src="https://picsum.photos/1600/900?random=43" class="crop-photo"
+                                                <img src="photo collections/vinh hy/IMG_4875.jpg" class="crop-photo"
                                                     style="z-index: 3">
-                                                <img src="https://picsum.photos/1600/900?random=44" class="crop-photo"
+                                                <img src="photo collections/vinh hy/IMG_4958.jpg" class="crop-photo"
                                                     style="z-index: 2">
-                                                <img src="https://picsum.photos/1600/900?random=45" class="last-photo"
+                                                <img src="photo collections/vinh hy/IMG_4973.jpg" class="last-photo"
                                                     style="z-index: 1">
                                             </div>
                                         </div>
@@ -325,15 +300,15 @@
                                     <div class="sticky-section">
                                         <div class="photo-sticky">
                                             <div class="photo-stack">
-                                                <img src="https://picsum.photos/1600/900?random=51" class="crop-photo"
+                                                <img src="photo collections/ha giang/IMG_7560.jpg" class="crop-photo"
                                                     style="z-index: 5">
-                                                <img src="https://picsum.photos/1600/900?random=52" class="crop-photo"
+                                                <img src="photo collections/ha giang/IMG_7690.jpg" class="crop-photo"
                                                     style="z-index: 4">
-                                                <img src="https://picsum.photos/1600/900?random=53" class="crop-photo"
+                                                <img src="photo collections/ha giang/IMG_7908.jpg" class="crop-photo"
                                                     style="z-index: 3">
-                                                <img src="https://picsum.photos/1600/900?random=54" class="crop-photo"
+                                                <img src="photo collections/ha giang/IMG_7090.jpg" class="crop-photo"
                                                     style="z-index: 2">
-                                                <img src="https://picsum.photos/1600/900?random=55" class="last-photo"
+                                                <img src="photo collections/ha giang/IMG_8040.jpg" class="last-photo"
                                                     style="z-index: 1">
                                             </div>
                                         </div>
@@ -364,16 +339,16 @@
                                     <div class="sticky-section">
                                         <div class="photo-sticky">
                                             <div class="photo-stack">
-                                                <img src="https://picsum.photos/1600/900?random=61" class="crop-photo"
-                                                    style="z-index: 5">
-                                                <img src="https://picsum.photos/1600/900?random=62" class="crop-photo"
-                                                    style="z-index: 4">
-                                                <img src="https://picsum.photos/1600/900?random=63" class="crop-photo"
-                                                    style="z-index: 3">
-                                                <img src="https://picsum.photos/1600/900?random=64" class="crop-photo"
-                                                    style="z-index: 2">
-                                                <img src="https://picsum.photos/1600/900?random=65" class="last-photo"
-                                                    style="z-index: 1">
+                                                <img src="photo collections/thailand/day1/thailand-14.jpg"
+                                                    class="crop-photo" style="z-index: 5">
+                                                <img src="photo collections/thailand/day1/thailand-12.jpg"
+                                                    class="crop-photo" style="z-index: 4">
+                                                <img src="photo collections/thailand/day2/thailand-59.jpg"
+                                                    class="crop-photo" style="z-index: 3">
+                                                <img src="photo collections/thailand/day2/thailand-70.jpg"
+                                                    class="crop-photo" style="z-index: 2">
+                                                <img src="photo collections/thailand/day2/thailand-096.jpg"
+                                                    class="last-photo" style="z-index: 1">
                                             </div>
                                         </div>
                                     </div>
@@ -403,15 +378,15 @@
                                     <div class="sticky-section">
                                         <div class="photo-sticky">
                                             <div class="photo-stack">
-                                                <img src="https://picsum.photos/1600/900?random=71" class="crop-photo"
+                                                <img src="photo collections/thailand/bangkok/8.jpg" class="crop-photo"
                                                     style="z-index: 5">
-                                                <img src="https://picsum.photos/1600/900?random=72" class="crop-photo"
+                                                <img src="photo collections/thailand/bangkok/13.jpg" class="crop-photo"
                                                     style="z-index: 4">
-                                                <img src="https://picsum.photos/1600/900?random=73" class="crop-photo"
+                                                <img src="photo collections/thailand/bangkok/18.jpg" class="crop-photo"
                                                     style="z-index: 3">
-                                                <img src="https://picsum.photos/1600/900?random=74" class="crop-photo"
+                                                <img src="photo collections/thailand/bangkok/22.jpg" class="crop-photo"
                                                     style="z-index: 2">
-                                                <img src="https://picsum.photos/1600/900?random=75" class="last-photo"
+                                                <img src="photo collections/thailand/bangkok/1.jpg" class="last-photo"
                                                     style="z-index: 1">
                                             </div>
                                         </div>

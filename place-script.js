@@ -4,7 +4,6 @@
 let lenis;
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Initialize Lenis Smooth Scrolling
     lenis = new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
@@ -18,18 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.ticker.lagSmoothing(0);
     gsap.registerPlugin(ScrollTrigger);
 
-    // Initialize UI Systems
     initNewMenuSystem();
     initContactPopup();
     initCursorAndLightbox();
 
-    // Prepare Text & Launch Animations (Waiting for fonts ensures accurate line-breaking)
     document.fonts.ready.then(() => {
         prepareTextLayouts();
         initAnimations();
     });
 });
-
 
 // =============================================================
 // 1. MENU & NAVIGATION SYSTEM
@@ -37,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
 function initNewMenuSystem() {
     const links = document.querySelectorAll(".menu-link");
 
-    // Dual-Word Char Setup for Flip Effect
     links.forEach(link => {
         const text = link.getAttribute("data-text");
         link.innerHTML = "";
@@ -68,7 +63,6 @@ function initNewMenuSystem() {
         });
     });
 
-    // Build the Menu GSAP Timeline
     const menuTl = gsap.timeline({ paused: true, reversed: true });
     menuTl.set(".menu-overlay", { visibility: "visible" })
         .to(".menu-overlay", { clipPath: "inset(0% 0% 0% 0% round 0px)", duration: 1, ease: "power4.inOut" }, 0)
@@ -93,16 +87,20 @@ function initNewMenuSystem() {
         }
     });
 
-    // Make Logo return home natively
-    document.querySelector(".logo").addEventListener("click", (e) => {
-        e.preventDefault();
-        window.location.href = "index.html?skip=1";
+    document.querySelectorAll('.menu-link').forEach(l => {
+        if(l.id !== "menu-contact-btn") {
+            l.addEventListener('click', (e) => {
+                if(l.getAttribute("href") && l.getAttribute("href").includes("#location-anchor")) {
+                    menuTl.reverse();
+                    hamburger.classList.remove("is-active");
+                    if (lenis) lenis.start();
+                }
+            });
+        }
     });
 
-    // Drop Header in gracefully on load
     gsap.to(".header", { y: "0%", duration: 1.5, ease: "power4.out", delay: 0.2 });
 }
-
 
 // =============================================================
 // 2. CONTACT BOARD
@@ -131,7 +129,6 @@ function initContactPopup() {
     });
 }
 
-
 // =============================================================
 // 3. CURSOR & LIGHTBOX
 // =============================================================
@@ -147,9 +144,16 @@ function initCursorAndLightbox() {
         yTo(e.clientY);
     });
 
+    // Default Hover Text
     hoverTargets.forEach(target => {
-        target.addEventListener('mouseenter', () => cursor.classList.add('active'));
-        target.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+        target.addEventListener('mouseenter', () => {
+            cursor.classList.add('active');
+            cursor.setAttribute('data-text');
+        });
+        target.addEventListener('mouseleave', () => {
+            cursor.classList.remove('active');
+            cursor.removeAttribute('data-text');
+        });
     });
 
     const lightbox = document.createElement("div");
@@ -172,17 +176,14 @@ function initCursorAndLightbox() {
     });
 }
 
-
 // =============================================================
 // 4. TEXT PREPARATION (SPLITTING & WRAPPING)
 // =============================================================
 function prepareTextLayouts() {
-    // A. Section 4 Dynamic Paragraph Injection
     const s4Container = document.getElementById("s4-text-wrap");
     const s4RawText = s4Container.getAttribute("data-s4-text") || "An error occurred fetching location text.";
     s4Container.innerHTML = s4RawText.split(" ").map(w => `<span class="word-wrap"><span class="s4-word">${w}</span></span>`).join("");
 
-    // B. Summary Text Line-by-Line Wrapping (for wiping animation)
     const summaryText = document.getElementById("summary-text");
     const wordsArray = summaryText.innerText.trim().split(/\s+/);
     summaryText.innerHTML = "";
@@ -221,19 +222,16 @@ function prepareTextLayouts() {
     });
 }
 
-
 // =============================================================
 // 5. MASTER GSAP SCROLL ANIMATIONS
 // =============================================================
 function initAnimations() {
-    // Hero Parallax
     gsap.to(".hero-image-container", {
         yPercent: 15,
         ease: "none",
         scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true }
     });
 
-    // --- SECTION INTRO ---
     const introPara = document.getElementById("intro-para");
     const introWords = introPara.innerText.trim().split(/\s+/);
     introPara.innerHTML = introWords.map(w => `<span class="word-wrap"><span class="intro-word">${w}</span></span>`).join("");
@@ -244,7 +242,6 @@ function initAnimations() {
     introTl.fromTo(".intro-word", { x: "100vw", opacity: 0 }, { x: "0vw", opacity: 1, stagger: 0.05, duration: 2, ease: "power2.out" });
     introTl.to(".intro-row", { x: () => -(document.querySelector('.intro-row').scrollWidth - window.innerWidth), duration: 6, ease: "none" }, "+=0.5");
 
-    // --- SECTION TWO ---
     const s2Tl = gsap.timeline({
         scrollTrigger: { trigger: "#section-two", start: "top top", end: "+=600%", scrub: 1, pin: true }
     });
@@ -258,18 +255,22 @@ function initAnimations() {
 
     parts.forEach((part, i) => {
         let t = 0.5 + i * 1.8; 
-        s2Tl.to(part, { y: "0%", duration: 0.4, ease: "power2.out" }, t);
+        
+        // Fades in cleanly inside the Grid
+        s2Tl.fromTo(part, { y: "2vw", opacity: 0 }, { y: "0vw", opacity: 1, duration: 0.4, ease: "power2.out" }, t);
+        
         s2Tl.to(leftImgs[i], { filter: "grayscale(0) brightness(1)", duration: 0.4 }, t);
         s2Tl.to(rightImgs[4 - i], { filter: "grayscale(0) brightness(1)", duration: 0.4 }, t);
         
         s2Tl.to(leftImgs[i], { filter: "grayscale(1) brightness(0.4)", duration: 0.4 }, t + 1.2);
         s2Tl.to(rightImgs[4 - i], { filter: "grayscale(1) brightness(0.4)", duration: 0.4 }, t + 1.2);
-        s2Tl.to(part, { y: "-100%", duration: 0.4, ease: "power2.in" }, t + 1.2);
+        
+        // Fades out upward seamlessly
+        s2Tl.to(part, { y: "-2vw", opacity: 0, duration: 0.4, ease: "power2.in" }, t + 1.2);
     });
 
     s2Tl.to(".s2-heading", { yPercent: -110, duration: 0.6, ease: "power2.inOut" }, 9.4);
 
-    // --- SECTION THREE ---
     const s3Tl = gsap.timeline({
         scrollTrigger: { trigger: "#section-three", start: "top top", end: "+=800%", scrub: 1, pin: true }
     });
@@ -303,7 +304,6 @@ function initAnimations() {
 
     s3Tl.to([leftImgsS3[4], rightImgsS3[4]], { scale: 0, opacity: 0, duration: 0.4, ease: "power2.in" }, 8);
 
-    // --- SECTION FOUR & FINAL ---
     const s4Tl = gsap.timeline({
         scrollTrigger: { trigger: "#s4-container", start: "top top", end: "+=400%", scrub: 1, pin: true }
     });
